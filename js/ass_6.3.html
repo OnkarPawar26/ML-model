@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <h1>Login Form</h1>
+    <form onsubmit="return validateForm()">
+        <label for="userLogin">User Login: </label>
+        <input type="email" id="userLogin" name="userLogin"><br><br>
+
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            const userLogin = document.getElementById('userLogin').value;
+            const password = document.getElementById('password').value;
+
+            if (userLogin !== 'abc@gmail.com') {
+                alert('Wrong User ID');
+                return false;
+            }
+
+            if (password === '') {
+                alert('Enter the Password');
+                return false;
+            }
+
+            alert('Form Submitted Successfully');
+            return true;
+        }
+    </script>
+</body>
+</html>
